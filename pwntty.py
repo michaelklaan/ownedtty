@@ -79,7 +79,7 @@ def lock_tty_io(dev):
 
 
 def bug_tty_cursor(dev, cur):
-    codes = lambda n: f"\033[XZ".replace(
+    codes = lambda n: f"{cur}\033[XZ".replace(
         "X", str(n)).replace("Z", list("ABCD")[randint(0, 3)])
 
     try:
